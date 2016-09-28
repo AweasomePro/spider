@@ -33,7 +33,7 @@ def spider_kaiyuan(start,end):
     with open(file_name, 'a+') as f:
         for account in range(int(start), int(end)):
             if (auth_account(account=account)):
-                f.write(account)
+                f.write('账号:{} 密码8888'.format(account) )
 
 def spide_multi_run_wrapper(args):
     spider_kaiyuan(*args)
