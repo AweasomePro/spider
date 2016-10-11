@@ -59,6 +59,8 @@ def generate_func_args(start, end):
     return (start, end)
 
 
+
+
 if __name__ == '__main__':
     password_str = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     accounts = ['888800051396', '888800051171', '888800051159', '888800051241', '888800051179','888800051231']
@@ -71,3 +73,5 @@ if __name__ == '__main__':
                         f.write('accout {} pwd {}'.format(account, password))
         print('睡眠中')
         time.sleep(60 * 15)
+
+
